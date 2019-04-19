@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'scrumboard.apps.ScrumboardConfig'
+    'scrumboard.apps.ScrumboardConfig',
+    'rest_framework'
+
 ]
 
 MIDDLEWARE = [
