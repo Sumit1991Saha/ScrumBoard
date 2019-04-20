@@ -16,8 +16,6 @@ class Card(models.Model):
     story_points = models.IntegerField(null=True, blank=True)
     business_value = models.IntegerField(null=True, blank=True)
 
-
-
     def __str__(self):
         return "Card: {}".format(self.title)
 
