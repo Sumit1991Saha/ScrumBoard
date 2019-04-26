@@ -19,6 +19,7 @@
                     $http.delete(url).then(function() {
                         var cards = $scope.list.cards;
                         cards.splice(cards.indexOf($scope.card), 1);
+                        alert($scope.card.title + " deleted succesfully");
                     })
                 }
             }]
