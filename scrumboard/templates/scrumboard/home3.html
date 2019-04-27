@@ -10,6 +10,10 @@
 
         {% verbatim %}
         <div ng-controller="ScrumboardController">
+
+            <button ng-click="login()">Login</button>
+            <a href="/auth_api/logout">Logout</a><br>
+
             <div class="list" ng-repeat="list in data">
                 <h3>{{ list.name }}</h3>
                 <ul>
@@ -30,6 +34,7 @@
         <!--This script has to come after scrumboard2 script 
             as the angular module has to be loaded first before fetching it 
             to apply the directive on it-->
+        <script src = "{% static "scrumboard/scrumboard.config.js" %}"></script>     
         <script src = "{% static "scrumboard/card.directive.js" %}"></script> 
     </body>
 </html>

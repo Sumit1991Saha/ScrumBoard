@@ -12,7 +12,10 @@
                 $scope.update = function () {
                     $http.put(url, $scope.card);
                 };
-                $scope.modelOptions = {
+                 //This is used to wait for 500 milli seconds 
+                 // before send the rest update call 
+                 // else each key stroke would send an update request to the server
+                $scope.modelOptions = { 
                     debounce: 500
                 };
                 $scope.delete = function() {
