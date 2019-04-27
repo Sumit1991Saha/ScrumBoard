@@ -2,4 +2,6 @@
 djangular/__pycache__/
 scrumboard/__pycache__/
 scrumboard/migrations/__pycache__/
+auth_api/__pycache__/
+auth_api/migrations/__pycache__/
 env/
