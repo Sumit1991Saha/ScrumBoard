@@ -25,13 +25,13 @@
                 delete localStorage.currentUser;
                 $http.get('/auth_api/logout/')
                      .then(function() {
-                         $location.utl('/login');
+                         $location.url('/login');
                      });
             }
 
             function redirectIfNotLoggedIn() {
                 if (!isLoggedIn) {
-                    $location.utl('/login');
+                    $location.url('/login');
                 }
             }
         }

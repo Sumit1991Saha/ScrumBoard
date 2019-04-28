@@ -1,8 +1,8 @@
 (function(){
     'use strict'
     
-    angular.module('scrumboard.demo',['ngRoute']).controller('ScrumboardController', ['$scope', '$http', 'Login', ScrumboardController]);
-    function ScrumboardController($scope, $http, Login) {
+    angular.module('scrumboard.demo',['ngRoute']).controller('ScrumboardController', ['$scope', '$http', '$location', 'Login', ScrumboardController]);
+    function ScrumboardController($scope, $http, $location, Login) {
         $scope.add = function (list, title) {
             var card = {
                 list: list.id,  //Same name as the table name in card table
@@ -32,6 +32,9 @@
                 $scope.data = response.data;
             },
             function(response) {
+                if (response.status == 403) {
+                    $location.url('/login');
+                }
                 alert("Login to fetch the data")
             }
         );
