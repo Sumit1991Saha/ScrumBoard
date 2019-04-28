@@ -5,6 +5,8 @@
         .service('Login', ['$http', '$location', Login]);
 
         function Login($http, $location) {
+
+            // first define all the functions that are available then define them
             this.login = login;
             this.isLoggedIn = isLoggedIn;
             this.logout = logout;
