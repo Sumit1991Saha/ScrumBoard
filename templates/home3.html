@@ -7,30 +7,12 @@
         <link rel="stylesheet" type="text/css" href="{% static "/css/scrumboard.css" %}" >
     </head>
     <body ng-app="scrumboard.demo">
-
-        {% verbatim %}
-        <div ng-controller="ScrumboardController">
-
-            <button ng-click="login()">Login</button>
-            <a href="/auth_api/logout">Logout</a><br>
-
-            <div class="list" ng-repeat="list in data">
-                <h3>{{ list.name }}</h3>
-                <ul>
-                    <li ng-repeat="card in list.cards">
-                        <scrumboard-card></scrumboard-card>
-                    </li>
-                </ul>
-                <div class="flex">
-                        <input type="text" ng-model="new_title" /> <!--{{ new_title }}-->
-                        <button ng-click="add(list, new_title)"> + </button>
-                </div>    
-            </div>
-        </div>
-        {% endverbatim %}
+        <ng-view></ng-view>
 
         <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.js"></script>
         <script src = "{% static "js/scrumboard2.js" %}"></script>
+        <script src = "{% static "js/login.controller.js" %}"></script> 
         <!--This script has to come after scrumboard2 script 
             as the angular module has to be loaded first before fetching it 
             to apply the directive on it-->
