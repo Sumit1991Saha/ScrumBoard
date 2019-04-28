@@ -4,8 +4,12 @@
 
 <div class="list" ng-repeat="list in data">
     <h3>{{ list.name }}</h3>
+    <dic>
+        <label>Provide Filter Criteria</label>
+        <input type="text" ng-model="filterBy" />
+    </dic>
     <ul>
-        <li ng-repeat="card in list.cards">
+        <li ng-repeat="card in list.cards | filter:filterBy">
             <scrumboard-card></scrumboard-card>
         </li>
     </ul>
