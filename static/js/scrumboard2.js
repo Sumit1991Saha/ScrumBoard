@@ -35,6 +35,11 @@
                 alert("Login to fetch the data")
             }
         );
+
+        //Initial input for sorting data sets
+        $scope.sortBy='story_points';
+        $scope.reverse=true;
+        $scope.showFilters=false;
     }
 
 }());
