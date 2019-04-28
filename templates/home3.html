@@ -12,11 +12,12 @@
         <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
         <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.js"></script>
         <script src = "{% static "js/scrumboard2.js" %}"></script>
-        <script src = "{% static "js/login.controller.js" %}"></script> 
         <!--This script has to come after scrumboard2 script 
             as the angular module has to be loaded first before fetching it 
             to apply the directive on it-->
         <script src = "{% static "js/scrumboard.config.js" %}"></script>     
+        <script src = "{% static "js/login.controller.js" %}"></script> 
+        <script src = "{% static "js/login.service.js" %}"></script> 
         <script src = "{% static "js/card.directive.js" %}"></script> 
     </body>
 </html>

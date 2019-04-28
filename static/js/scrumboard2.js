@@ -1,8 +1,8 @@
 (function(){
     'use strict'
     
-    angular.module('scrumboard.demo',['ngRoute']).controller('ScrumboardController', ['$scope', '$http', '$location', ScrumboardController]);
-    function ScrumboardController($scope, $http, $location) {
+    angular.module('scrumboard.demo',['ngRoute']).controller('ScrumboardController', ['$scope', '$http', 'Login', ScrumboardController]);
+    function ScrumboardController($scope, $http, Login) {
         $scope.add = function (list, title) {
             var card = {
                 list: list.id,  //Same name as the table name in card table
@@ -19,14 +19,14 @@
             );
         }
 
-        $scope.logout = function() {
-            $http.get('/auth_api/logout/')
-                .then(function() {
-                    $location.url('/login');
-                }); 
-        }
-
+        Login.redirectIfNotLoggedIn();
         $scope.data = []
+        $scope.logout = Login.logout;
+        //Initial input for sorting data sets
+        $scope.sortBy='story_points';
+        $scope.reverse=true;
+        $scope.showFilters=false;
+        
         $http.get('/scrumboard/lists/').then(
             function(response) {
                 $scope.data = response.data;
@@ -36,10 +36,7 @@
             }
         );
 
-        //Initial input for sorting data sets
-        $scope.sortBy='story_points';
-        $scope.reverse=true;
-        $scope.showFilters=false;
+        
     }
 
 }());
