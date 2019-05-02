@@ -11,9 +11,24 @@
                 ng-model="card.title" 
                 ng-change="update()"/>
     </div>
-    <textarea ng-model="card.description" 
+    <div>
+        <label><strong>Description:&nbsp;</strong></label>
+        <textarea ng-model="card.description" 
                 placeholder="Enter description"
                 ng-change="update()"></textarea>
+    </div>
+    <div>
+        <label><strong>Story Points:&nbsp;</strong></label>
+        <input type="text" 
+                ng-model="card.story_points" 
+                ng-change="update()"/>
+    </div>
+    <div>
+        <label><strong>Business Value:&nbsp;</strong></label>
+        <input type="text" 
+                ng-model="card.business_value" 
+                ng-change="update()"/>
+    </div>
 
     <div>
         <label> List: </label>
